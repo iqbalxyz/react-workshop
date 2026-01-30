@@ -1,0 +1,6 @@
+{
+  "name": "@todo-app/shared-utils",
+  "version": "1.0.0",
+  "description": "Shared utility functions for Todo App",
+  "main": "src/index.js"
+}

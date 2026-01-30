@@ -1,0 +1,117 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.counter-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 400px;
+}
+
+.counter-container h1 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.count-display {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #cccccc;
+  border-radius: 8px;
+}
+
+.count-display h2 {
+  margin: 0;
+  font-size: 3rem;
+  color: #495057;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-increment {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-increment:hover {
+  background-color: #218838;
+}
+
+.btn-decrement {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-decrement:hover {
+  background-color: #c82333;
+}
+
+.btn-reset {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-reset:hover {
+  background-color: #5a6268;
+}
+
+/* Bonus: Custom step input styling */
+.step-control {
+  margin: 20px 0;
+}
+
+.step-control label {
+  display: block;
+  margin-bottom: 8px;
+  color: #495057;
+  font-weight: 500;
+}
+
+.step-control input {
+  padding: 8px 12px;
+  border: 2px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100px;
+  text-align: center;
+}
+
+.step-control input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+ 
