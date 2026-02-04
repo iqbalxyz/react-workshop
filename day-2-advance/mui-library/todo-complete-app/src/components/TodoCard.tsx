@@ -1,22 +1,35 @@
 import { Box, Typography, Card, CardContent } from '@mui/material';
-import AssignmentIcon from '@mui/icons-material/Assignment';
+import { SvgIconComponent } from '@mui/icons-material';
 
-function TodoCard(): JSX.Element {
-    return(
-        <Card sx={{ width: '100%', mt:2 }}>
-            <CardContent sx={{ display: 'flex', alignItems: 'center' }}>
-                <AssignmentIcon fontSize="large" color="primary" sx={{ mr: 2 }} />
-                <Box>
-                    <Typography variant="h6" component="div" fontWeight="bold">
-                    0
-                    </Typography>
-                    <Typography variant="caption" component="div" sx={{color: '#a89292'}}>
-                    Total
-                </Typography>
-                </Box>
-            </CardContent>
-        </Card>
-    );
+interface TodoCardProps {
+  Icon: SvgIconComponent;
+  countValue: number | string;
+  label: string;
+  iconColor?: string; 
 }
+
+const TodoCard = ({ Icon, countValue, label, iconColor = "primary" }: TodoCardProps) => {
+  return (
+    <Card sx={{ width: '100%' }}>
+      <CardContent sx={{ display: 'flex', alignItems: 'center' }}>
+        <Icon 
+          fontSize="large" 
+          sx={{ 
+            mr: 2, 
+            color: iconColor
+          }} 
+        />
+        <Box>
+          <Typography variant="h6" component="div" fontWeight="bold">
+            {countValue}
+          </Typography>
+          <Typography variant="body1" component="div" sx={{ color: '#a89292' }}>
+            {label}
+          </Typography>
+        </Box>
+      </CardContent>
+    </Card>
+  );
+};
 
 export default TodoCard;

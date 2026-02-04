@@ -1,20 +1,16 @@
-import { Box, ToggleButtonGroup, ToggleButton } from '@mui/material';
-import { useState } from 'react';
+import { FilterValue } from '../App';
+import { ToggleButtonGroup, ToggleButton } from '@mui/material';
 
-function TodoToggle(): JSX.Element {
-    
-    type FilterValue = 'all' | 'active' | 'completed';
-      
-      const [alignment, setAlignment] = useState<FilterValue>('all');
-    
-      const handleAlignment = (event:React.MouseEvent<HTMLElement>, newAlignment: FilterValue) => {
-        if (newAlignment !== null) {
-          setAlignment(newAlignment);
-        }
-      }
+interface TodoToggleProps {
+  alignment: FilterValue;
+  handleAlignment: (event: React.MouseEvent<HTMLElement>, newAlignment: FilterValue) => void;
+  totalCount: number | string;
+  activeCount: number | string;
+  completedCount: number | string;
+}
 
-    return(
-        <Box sx={{ mt: 2 }}>
+const TodoToggle = ({ alignment, handleAlignment, totalCount, activeCount, completedCount }: TodoToggleProps) => {
+  return(
         <ToggleButtonGroup
           value={alignment}
           exclusive
@@ -29,17 +25,16 @@ function TodoToggle(): JSX.Element {
             },
           }}
         >
-          <ToggleButton value="all" sx={{ px: 3 }}>
-            ALL (0)
+          <ToggleButton value="all">
+            ALL ({totalCount})
           </ToggleButton>
-          <ToggleButton value="active" sx={{ px: 3 }}>
-            ACTIVE (0)
+          <ToggleButton value="active">
+            ACTIVE ({activeCount})
           </ToggleButton>
-          <ToggleButton value="completed" sx={{ px: 3 }}>
-            COMPLETED (0)
+          <ToggleButton value="completed">
+            COMPLETED ({completedCount})
           </ToggleButton>
         </ToggleButtonGroup>
-      </Box>
     );
 }
 
